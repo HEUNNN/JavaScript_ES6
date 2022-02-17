@@ -150,3 +150,7 @@ userStorage.loginUser(
     console.log("Error");
   }
 );
+/* callback 지옥의 단점
+ 1. 가독성이 떨어진다.
+ 2. 에러 분석, 디버깅, 유지보수를 해야하는 경우에 어렵다.
+*/
