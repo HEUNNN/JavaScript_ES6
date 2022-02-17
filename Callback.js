@@ -154,3 +154,41 @@ userStorage.loginUser(
  1. 가독성이 떨어진다.
  2. 에러 분석, 디버깅, 유지보수를 해야하는 경우에 어렵다.
 */
+//콜백 지옥
+let list = [];
+setTimeout(
+  (name) => {
+    list.push(name);
+    console.log(list);
+
+    setTimeout(
+      (name) => {
+        list.push(name);
+        console.log(list);
+
+        setTimeout(
+          (name) => {
+            list.push(name);
+            console.log(list);
+
+            setTimeout(
+              (name) => {
+                list.push(name);
+                console.log(list);
+              },
+              500,
+              "카페모카"
+            );
+          },
+          500,
+          "카페라떼"
+        );
+      },
+      500,
+      "아메리카노"
+    );
+  },
+  500,
+  "에스프레소"
+);
+//[ '에스프레소', '아메리카노', '카페라떼', '카페모카' ]
