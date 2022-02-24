@@ -10,12 +10,11 @@ Asynchronous: 언제 코드가 실행될지 예측할 수 없음 -> '비동기'
 */
 
 console.log("1");
-setTimeout(() => {
-  //setTimeout()은 브라우저 API이다.
-  //브라우저 API는 무조건 브라우저에게 먼저 요청을 보내며,
-  //응답을 기다리지 않고 다음 code console.log('2')로 넘어감
-  console.log("hello"); //callback 함수
-}, 1000);
+const callback = () => {
+  console.log("hello");
+};
+callback();
+setTimeout(callback, 1000);
 console.log("2");
 console.log("3");
 
@@ -63,10 +62,11 @@ function printWithDelay(print, timeout) {
   //setTimout()을 wrapping
   setTimeout(print, timeout);
 }
-printWithDelay(() => {
+const print = () => {
   //callback을 비동기적으로 실행
   console.log("Async callback");
-}, 2000);
+};
+printWithDelay(print, 2000);
 
 /* (비동기) Hoisting이 적용된 실제로 실행된 코드 -> 함수 선언이 가장 위로 올라감(Hoisting)
 
