@@ -36,3 +36,26 @@ fruits.pop();
 console.log(fruits);
 fruits.shift();
 console.log(fruits);
+
+//splice ->  인덱스를 사용하여 특정 위치의 item 삭제
+fruits.push("lemmon", "peach", "watermelon");
+console.log(fruits);
+//[ 'apple', 'banana', 'strawberry', 'lemmon', 'peach', 'watermelon']
+const d = fruits.splice(2, 2);
+console.log(d);
+console.log(fruits);
+fruits.splice(1, 1, "grape", "orange");
+console.log(fruits);
+//concat -> 2개의 배열을 합치는 배열의 API
+const fruits2 = ["coconut", "pear"];
+const newFruits = fruits.concat(fruits2);
+console.log(newFruits);
+//indexOf : 요소의 index 칮기
+console.log("origin fruits: ", fruits, "origin fruits2: ", fruits2);
+console.log(`apple \'s index: ${fruits.indexOf("apple")}`);
+//includex: 배열에 해당 요소가 존재하는지에 대해 boolean 값 반환
+console.log(`apple is exist? ${fruits.includes("apple")}.`);
+//lastIndexOf: 찾고자하는 요소가 여러개있을떼, 그들 중 마지막 요소의 인덱스를 반환
+fruits.push("orange");
+console.log(fruits);
+console.log(fruits.lastIndexOf("orange"));
