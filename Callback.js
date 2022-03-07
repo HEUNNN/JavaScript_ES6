@@ -44,11 +44,11 @@ class UserStorage {
       }
     }, 2000);
   }
-  getRoles(user, onSuccess, onError) {
+  getRoles(userId, onSuccess, onError) {
     // 사용자가 역할을 받아온다.
     setTimeout(() => {
-      if (user === "ellie") {
-        onSuccess({ userName: "ellie", userRole: "admin" });
+      if (userId === "ellie") {
+        onSuccess({ userName: "hyeeun", userRole: "admin" });
       } else {
         onError(new Error("no access!"));
       }
